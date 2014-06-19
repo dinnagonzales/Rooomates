@@ -1,0 +1,15 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+
+<div>
+	<%= form_for @user do |f| %>
+	<p>
+	<%= f.text_field :name, :placeholder => "Name" %>
+	<%= f.text_field :email, :placeholder => "Email" %>
+	<%= f.password_field :password, :placeholder => "Password" %><br><br>
+	</p>
+	
+	<%= button_to('Create Account', new_sessions_path, :class => 'btn btn-warning btn-mini')  %>
+	<% end %>
+</div>
