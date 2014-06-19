@@ -2,12 +2,25 @@
 <html>
 <head>
   <title>Rooomates</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <link href='http://fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<div class="navbar">
+		<%= link_to (image_tag 'logo.png', id: "logo"), root_path %>
+		<% if !current_user %>
+		  <%= link_to "LOG IN", new_sessions_path, class: "navlinks" %>
+      <%= link_to "SIGN UP", new_user_path, class: "navlinks" %>
+    <% end %>
+    <% if current_user %>
+      <%= link_to "SIGN OUT", sessions_path, :method => :delete, class: "navlinks" %>
+    <%end%>
+	</div> <!-- end of navbar -->
+
 
 <%= yield %>
 
