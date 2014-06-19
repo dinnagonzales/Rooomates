@@ -5,9 +5,38 @@
 <div>
 	<%= form_for @user do |f| %>
 	<p>
-	<%= f.text_field :name, :placeholder => "Name" %>
 	<%= f.text_field :email, :placeholder => "Email" %>
 	<%= f.password_field :password, :placeholder => "Password" %><br><br>
+	<%= f.text_field :name, :placeholder => "Name" %>
+	<%= f.text_field :age, :placeholder => "Age" %><br><br>
+
+	<%= f.select :gender, options_for_select(%w[Male Female LGBT]) %>
+
+	<%= f.text_field :city, :placeholder => "City" %>
+	<%= f.text_field :state, :placeholder => "State" %>
+	
+
+	<p>
+	<strong>5</strong> I want the house to be clean and organized all the time.<br />
+	<strong>4</strong> I want the general areas of the house to be neat but your room is your business.<br />
+	<strong>3</strong> I want the house to be generally neat and am willing to put up with a little mess.<br />
+	<strong>2</strong> It does not bother me if the house is disorganized just as long as it is clean.<br />
+	<strong>1</strong> It does not bother me if the house is generally cluttered and disorganized.<br />
+	</p>
+
+	<%= f.text_field :cleanliness %>
+	<%= f.text_field :noise_tolerance %>
+	<%= f.text_field :visitors %>
+	<%= f.text_field :pets %>
+	<%= f.text_field :smoking %>
+	<%= f.text_field :sleeping_hours %>
+	<%= f.text_field :cooks %>
+	<%= f.text_field :hours %>
+	<%= f.text_field :lifestyle %>
+	<%= f.text_field :interests %>
+	<%= f.text_field :notes %>
+
+	</div>
 	</p>
 	
 	<%= button_to('Create Account', new_sessions_path, :class => 'btn btn-warning btn-mini')  %>

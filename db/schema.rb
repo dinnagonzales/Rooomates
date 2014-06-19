@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140619023816) do
     t.string   "gender"
     t.string   "city"
     t.string   "state"
-    
     t.integer  "cleanliness"
     t.integer  "noise_tolerance"
     t.integer  "visitors"
