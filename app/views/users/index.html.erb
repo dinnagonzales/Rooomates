@@ -30,12 +30,30 @@
 	<div class="small-6 large-7 columns" id="profilefeed">
 	
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles">
-				<p>{{p.user_id}}</p><br>
-				{{p.cleanliness}}<br>
-				{{p.noise_tolerance}}<br>	
-				{{p.visitors}}<br>	
-				{{p.smoking}}<br>
-				{{p.pets}}<br>		
+				<div class="profpicindex"></div>
+				<span class="username">{{p.user.name}}</span>	<br>
+				{{p.user.age}}	<br>
+				{{p.user.city}}, {{p.user.state}}
+
+				<br><br><br>
+				<h1 class="proftitle">CLEANLINESS:
+				<span class="profattributes">{{p.cleanliness}}</span><br></h1>
+
+				<h1 class="proftitle">NOISE TOLERANCE: 
+				<span class="profattributes">{{p.noise_tolerance}}<br></span>	</h1>
+				
+				<h1 class="proftitle">VISITORS:
+				<span class="profattributes">{{p.visitors}}<br>	</span></h1>
+
+				<h1 class="proftitle">QUIET HOURS:
+				<span class="profattributes">{{p.pets}}<br></span>	</h1>
+		
+				<h1 class="proftitle">PETS:
+				<span class="profattributes">{{p.pets}}<br></span>	</h1>
+
+				<h1 class="proftitle">SMOKING:
+				<span class="profattributes">{{p.smoking}}<br>	</span></h1>
+			<div class="addtopotential">click</div>
 			</div>
 
 	</div>
