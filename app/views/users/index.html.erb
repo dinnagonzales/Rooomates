@@ -1,3 +1,53 @@
-<div class="userindex"><h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="userindex" x-ng-app="profile-app" x-ng-controller="ProfileCtrl" >
+	<div class="homenavigation">
+		home potential messages
+	</div>
+	
+	<div class="small-6 large-2 columns" id="usersidebar">
+			<div class="userpic">PHOTO</div>
+			<br><br>
+			Hello, <%= current_user.name %> !<br><br>
+
+			<% if current_user.profile %>
+			<%= link_to 'EDIT', edit_profile_path(current_user) %>
+			<br><br>
+			Cleanliness: <%= current_user.profile.cleanliness %><br>
+      		Noise Tolerance:<%= current_user.profile.noise_tolerance %><br>
+      		Visitors:<%= current_user.profile.visitors %><br>
+      		Pets:<%= current_user.profile.pets %><br>
+      		Smoking:<%= current_user.profile.smoking %><br>
+      		Sleeps at:<%= current_user.profile.sleeping_hours %><br>
+      		Cooks:<%= current_user.profile.cooks %><br>
+      		Lifestyle:<%= current_user.profile.lifestyle %><br>
+        	Interests:<%= current_user.profile.interests %><br>
+     		Notes:<%= current_user.profile.notes %><br>
+			<% else %>
+			<%= link_to 'Create Profile',  new_profile_path, class: "homelinks"%>
+			<% end %>
+	</div>
+
+	
+	<div class="small-6 large-7 columns" id="profilefeed">
+	
+			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles">
+				<p>{{p.user_id}}</p><br>
+				{{p.cleanliness}}<br>
+				{{p.noise_tolerance}}<br>	
+				{{p.visitors}}<br>	
+				{{p.smoking}}<br>
+				{{p.pets}}<br>		
+			</div>
+
+	</div>
+
+	<div class="small-6 large-2 columns" id="usersidebar">
+			<br><br><br>
+			<STRONG>FILTERS</STRONG>
+	</div>
+
+	
+	
 </div>
+
+
+		

@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
-
+gem 'foundation-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'bcrypt-ruby','~>3.1.2'
+gem 'rspec-rails', '~>2.14.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -25,7 +26,8 @@ gem 'jquery-rails'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'active_model_serializers'
+gem 'angularjs-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

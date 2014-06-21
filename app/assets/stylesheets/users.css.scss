@@ -1,15 +1,65 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body{
-	padding: 0px;
-	margin: 0px;
-	font-family: 'Raleway Dots', cursive;
-}
+
 .userindex{
-	background-image: url('userindex.jpg');
-	background-size: cover;
-	background-position: center center;
-	height: 705px;
 	width: 100%;	
+	height: 640px;
+}
+
+.homenavigation{
+	border: 1px solid yellow;
+	width: 100%;
+	height: 85px;
+}
+
+#usersidebar{
+	border: 1px solid black;
+	height: 550px;
+	margin: 0 15px;
+	padding: 10px;
+}
+
+.homelinks{
+	color: white;
+	text-decoration: none !important;
+}
+
+.userpic{
+	border: 1px solid black;
+	float: left;
+	width: 190px;
+	height: 180px;
+	margin-bottom: 5px;
+}
+
+
+#profilefeed{
+	float:left;
+	margin:0;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	padding-top: 20px;
+	padding-left: 25px;
+	padding-right:10px;
+	background-color: rgba(255,255,255,0.7);
+	height: 550px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin: 0 5px;
+}
+
+.profiles {
+	padding-left: 10px;
+	width: 220px;
+	height:300px;
+	margin: 5px;
+	float: left;
+	display: inline;
+	background-color: rgba(255,153,51,0.8);
+
+}
+#filter{
+	border: 1px solid black;
+	height: 550px;
 }

@@ -11,15 +11,37 @@
 <body>
 
 	<div class="navbar">
-		<%= link_to (image_tag 'logo.png', id: "logo"), root_path %>
 		<% if !current_user %>
-		  <%= link_to "LOG IN", new_sessions_path, class: "navlinks" %>
-      <%= link_to "SIGN UP", new_user_path, class: "navlinks" %>
+       <%= link_to (image_tag 'logo.png', id: "logo"), root_path %>
+		   <a href="#" data-reveal-id="loginmodal" class="navlinks">LOG IN</a>
+       <a href="#" data-reveal-id="signupmodal" class="navlinks">SIGN UP</a>
     <% end %>
+
     <% if current_user %>
+      <%= link_to (image_tag 'logo.png', id: "logo"), users_path %>
       <%= link_to "SIGN OUT", sessions_path, :method => :delete, class: "navlinks" %>
     <%end%>
+
 	</div> <!-- end of navbar -->
+
+
+
+ 
+  <div id="loginmodal" class="reveal-modal" data-reveal>
+     <%= render partial: 'sessions/forms', :controller=>"sessions", :action =>"new" %>
+     <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <div id="signupmodal" class="reveal-modal" data-reveal>
+     <%= render partial: 'users/forms', :controller=>"users", :action =>"new" %>
+     <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
+
+
+
+
 
 
 <%= yield %>

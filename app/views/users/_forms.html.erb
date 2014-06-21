@@ -1,0 +1,17 @@
+<div>
+	<%= form_for User.new do |f| %>
+
+	<p>
+	<%= f.text_field :email, :placeholder => "Email" %>
+	<%= f.password_field :password, :placeholder => "Password" %>
+	<%= f.text_field :name, :placeholder => "Name" %>
+	<%= f.text_field :age, :placeholder => "Age" %>
+	<%= f.select :gender, options_for_select(%w[Male Female LGBT]) %>
+	<%= f.text_field :city, :placeholder => "City" %>
+	<%= f.text_field :state, :placeholder => "State" %>
+
+	</p>
+	
+	<%= button_to('Create Account', new_sessions_path, :class => 'btn btn-warning btn-mini')  %>
+	<% end %>
+</div>
