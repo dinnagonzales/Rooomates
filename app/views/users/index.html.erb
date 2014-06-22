@@ -8,7 +8,13 @@
 			<br><br>
 			Hello, <%= current_user.name %> !<br><br>
 
+
+			
+
 			<% if current_user.profile %>
+			<a ng-click="editProfile(profile);" class="btn btn-info">edit</a>
+
+
 			<%= link_to 'EDIT', edit_profile_path(current_user) %>
 			<br><br>
 			Cleanliness: <%= current_user.profile.cleanliness %><br>
@@ -53,7 +59,7 @@
 
 				<h1 class="proftitle">SMOKING:
 				<span class="profattributes">{{p.smoking}}<br>	</span></h1>
-			<div class="addtopotential">click</div>
+			<div class="addtopotential" ng-click="savePotential()">click</div>
 			</div>
 
 	</div>

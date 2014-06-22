@@ -1,4 +1,10 @@
 Rooomates::Application.routes.draw do
+  get "potential_roomies/index"
+  get "potential_roomies/new"
+  get "potential_roomies/all"
+  get "potential_roomies/show"
+  get "potential_roomies/create"
+  get "potential_roomies/destroy"
  resource :sessions
  resources :users 
  resources :profiles
