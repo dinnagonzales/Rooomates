@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
         :password_digest
         
   has_one :profile
+  has_private_messages
 
   def password
     @password
