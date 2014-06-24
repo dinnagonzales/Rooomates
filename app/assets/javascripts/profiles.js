@@ -33,6 +33,13 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
   $scope.newProfile = new Profile();
   $scope.potentials=[];
   
+   $scope.profiles.options = [
+              { id : "", name: "" }
+             ,{ id : "", name: "" }
+             ,{ id : ""  , name: "" }
+             ];
+
+
  
   Potential.query(function(potentials) {
       $scope.potentials = potentials;
@@ -48,6 +55,7 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
       $scope.newProfile.$save(function(profile) {
         $scope.profiles.push(profile);
         $scope.newProfile = new Profile();
+        $route.reload();
         console.log('usersaved');
       });
     };
@@ -89,7 +97,7 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
       $scope.errors = null;
     };
 
-    
+ 
     // // ADDING POTENTIAL ROOOMATES
 
     
