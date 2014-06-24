@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :potentials
 
 
+
   def password
     @password
   end
@@ -44,11 +45,9 @@ end
 
 
 def favorable(opts={})
-  
   # favorable_type
   type = opts[:type] ? opts[:type] : :topic
   type = type.to_s.capitalize
-
   # add favorable_id to condition if id is provided
   con = ["user_id = ? AND favorable_type = ?", self.id, type]
   

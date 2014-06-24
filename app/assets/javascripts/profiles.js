@@ -21,15 +21,24 @@ profileApp.factory('Profile', ['$resource', function($resource) {
      {update: { method: 'PATCH'}});
 }]);
 
+profileApp.factory('Potential', ['$resource', function($resource) {
+  return $resource('/potentials/:id',
+     {id: '@id'},
+     {update: { method: 'PATCH'}});
+}]);
 
 
-
-profileApp.controller('ProfileCtrl', ['Profile', '$scope', function(Profile, $scope) {
+profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function(Profile, Potential, $scope) {
   $scope.profiles= [];
   $scope.newProfile = new Profile();
   $scope.potentials=[];
   
  
+  Potential.query(function(potentials) {
+      $scope.potentials = potentials;
+   });
+
+
   
   Profile.query(function(profiles) {
     $scope.profiles = profiles;
@@ -43,10 +52,13 @@ profileApp.controller('ProfileCtrl', ['Profile', '$scope', function(Profile, $sc
       });
     };
 
+
     $scope.savePotential = function (profile) {
-        $scope.potentials.push(profile);
-        $scope.potentials.$save;
-        console.log('usermine');
+        newPotential = new Potential({favorable_id: profile.id})
+        newPotential.$save(function(potential) {
+          $scope.potentials.push(potential);
+          console.log('potentialsaved');
+        });
     };
     
 

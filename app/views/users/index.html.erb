@@ -37,6 +37,8 @@
 
 	
 	<div class="small-6 large-7 columns" id="profilefeed">
+
+			<% if current_user.profile %>
 	
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles">
 				<div class="profpicindex"></div>
@@ -63,7 +65,9 @@
 				<h1 class="proftitle">SMOKING:
 				<span class="profattributes">{{p.smoking}}<br>	</span></h1>
 			<div class="addtopotential" ng-click="savePotential(p)">click
-
+		<% else %>
+			<%= render 'profiles/form' %>
+		<% end %>
 					
 
 			</div>
@@ -76,7 +80,9 @@
 	<div class="small-6 large-2 columns" id="filtersidebar">
 			<br><br><br>
 			<STRONG>FILTERS</STRONG>
-<div class="potentials" ng-model="potentials" ng-repeat="r in potentials">{{r}}
+<div class="potentials" ng-model="potentials" ng-repeat="r in potentials"> 
+			{{r.user_id}}
+
 
 
 

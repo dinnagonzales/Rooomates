@@ -37,8 +37,9 @@ class ProfilesController < ApplicationController
     
     if @profile.save
       respond_to do |format|
-      format.html {redirect_to users_path}
+      format.html {redirect_to :back}
       format.json {render json: @profile, status: :created}
+  
     end
     else
       respond_to do |format|
