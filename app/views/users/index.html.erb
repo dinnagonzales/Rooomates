@@ -1,14 +1,17 @@
 <div class="userindex" x-ng-app="profile-app" x-ng-controller="ProfileCtrl" >
 	<div class="homenavigation">
 		home potential messages
+
+		<%= link_to "Sign Out", sessions_path, :method => :delete, class: "signoutlink" %>
 	</div>
 	
 	<div class="small-6 large-2 columns" id="usersidebar">
 			<div class="userpic">PHOTO</div>
 			<br><br>
-			Hello, <%= current_user.name %> !<br><br>
 
 
+			hello, <%= current_user.name %>
+			 <br>
 			
 
 			<% if current_user.profile %>
@@ -38,8 +41,8 @@
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles">
 				<div class="profpicindex"></div>
 				<span class="username">{{p.user.name}}</span>	<br>
-				{{p.user.age}}	<br>
-				{{p.user.city}}, {{p.user.state}}
+				<span class="profdetails">{{p.user.age}}</span>	<br>
+				<span class="profdetails">{{p.user.city}}, {{p.user.state}}</span>
 
 				<br><br><br>
 				<h1 class="proftitle">CLEANLINESS:
@@ -59,14 +62,24 @@
 
 				<h1 class="proftitle">SMOKING:
 				<span class="profattributes">{{p.smoking}}<br>	</span></h1>
-			<div class="addtopotential" ng-click="savePotential()">click</div>
+			<div class="addtopotential" ng-click="savePotential(p)">click
+
+					
+
+			</div>
+
+
 			</div>
 
 	</div>
 
-	<div class="small-6 large-2 columns" id="usersidebar">
+	<div class="small-6 large-2 columns" id="filtersidebar">
 			<br><br><br>
 			<STRONG>FILTERS</STRONG>
+<div class="potentials" ng-model="potentials" ng-repeat="r in potentials">{{r}}
+
+
+
 	</div>
 
 	

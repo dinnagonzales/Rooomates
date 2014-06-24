@@ -27,6 +27,8 @@ profileApp.factory('Profile', ['$resource', function($resource) {
 profileApp.controller('ProfileCtrl', ['Profile', '$scope', function(Profile, $scope) {
   $scope.profiles= [];
   $scope.newProfile = new Profile();
+  $scope.potentials=[];
+  
  
   
   Profile.query(function(profiles) {
@@ -40,6 +42,14 @@ profileApp.controller('ProfileCtrl', ['Profile', '$scope', function(Profile, $sc
         console.log('usersaved');
       });
     };
+
+    $scope.savePotential = function (profile) {
+        $scope.potentials.push(profile);
+        $scope.potentials.$save;
+        console.log('usermine');
+    };
+    
+
 
     $scope.showProfile = function(profile) {
       profile.details = true;
@@ -70,8 +80,7 @@ profileApp.controller('ProfileCtrl', ['Profile', '$scope', function(Profile, $sc
     
     // // ADDING POTENTIAL ROOOMATES
 
-    // $scope.potential=[];
-    // $scope.newPotential = new Potential();
+    
     
     // Potential.query(function(potentials) {
     // $scope.potentials = potentials;

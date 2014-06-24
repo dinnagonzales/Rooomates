@@ -12,12 +12,14 @@ class UsersController < ApplicationController
       flash[:success] = "You have signed up successfully."
       redirect_to new_sessions_path
     else
-      render :new
+      flash[:error] = @user.errors
+      redirect_to root_path
     end
   end
 
   def index
     @users = User.all
+    
   end
 
 

@@ -3,13 +3,16 @@
 <div class="first_loginbox">
 	<div class="log_in_box">
 		<%= form_for :session, :url => sessions_path do |f| %>&nbsp;
-	  		<%= f.text_field :email,  :placeholder => "Email" %>
-	  		<%= f.password_field :password,  :placeholder => "Password" %><br><br>
-	  		<%= button_to('Log In', users_path, :class => 'btn btn-warning btn-mini')  %>
+	  		<%= f.submit 'LOG IN', class: "loginlink" %>
+	  		<%= f.password_field :password,  :placeholder => "Password", class: "loginbox" %>
+	  		<%= f.text_field :email,  :placeholder => "Email", class: "loginbox" %>
+	  		
+	  		<br><br>
+
+	  		
 		<% end %>
 	</div>
 </div>
 
 </div>
-
 

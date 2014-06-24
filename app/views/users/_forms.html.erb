@@ -1,17 +1,31 @@
-<div>
+
+	<div class="signupbox" id="about">
+	
+	</div>
+
+<div class="signupbox" id="signupform">
+	
+
+<br><br>
 	<%= form_for User.new do |f| %>
 
+
 	<p>
-	<%= f.text_field :email, :placeholder => "Email" %>
-	<%= f.password_field :password, :placeholder => "Password" %>
-	<%= f.text_field :name, :placeholder => "Name" %>
-	<%= f.text_field :age, :placeholder => "Age" %>
-	<%= f.select :gender, options_for_select(%w[Male Female LGBT]) %>
-	<%= f.text_field :city, :placeholder => "City" %>
-	<%= f.text_field :state, :placeholder => "State" %>
+	<%= f.text_field :email, :placeholder => "Email", class: "formuser" %>
+	<%= f.password_field :password, :placeholder => "Password",  class: "formuser"%>
+	<%= f.text_field :name, :placeholder => "Name", class: "formname" %>
+	<%= f.text_field :age, :placeholder => "Age", class: "formuser"  %>
+	<%= f.select :gender, options_for_select(%w[Male Female LGBT]), class: "formselect" %>
+	<%= f.text_field :city, :placeholder => "City",class: "formuser"%>
+	<%= f.text_field :state, :placeholder => "State", class: "formuser"%>
 
 	</p>
 	
-	<%= button_to('Create Account', new_sessions_path, :class => 'btn btn-warning btn-mini')  %>
+	<%= button_to('Create Account', new_sessions_path, :class => 'butt')  %>
 	<% end %>
+	
+
+
 </div>
+
+

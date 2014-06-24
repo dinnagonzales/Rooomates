@@ -4,22 +4,39 @@
 
 .userindex{
 	width: 100%;	
-	height: 640px;
+	height: 100%;
+	background-image: url('userindex.png');
+	background-size: cover;
+	padding-left: 60px;
+	padding-right: 40px;
+	font-family: 'Raleway', sans-serif !important;
 }
 
 .homenavigation{
 	border: 1px solid yellow;
 	width: 100%;
-	height: 85px;
+	height: 150px;
 }
 
 #usersidebar{
-	border: 1px solid black;
-	height: 550px;
-	margin: 0 15px;
+	color: black;
+	border-radius: 5px;
+	background-color: white;
+	height: 620px;
+	margin: 10px 20px 0 20px;
 	padding: 10px;
 }
 
+
+#filtersidebar{
+	border-radius: 5px;
+	background-color: white;
+	height: 620px;
+	position: relative;
+	left: -55px;
+	margin: 10px 0px 0px 0px !important;
+	padding: 10px;
+}
 .homelinks{
 	color: white;
 	text-decoration: none !important;
@@ -36,14 +53,14 @@
 
 #profilefeed{
 	float:left;
-	margin:0;
-	border-top-right-radius: 15px;
-	border-top-left-radius: 15px;
+	margin:10px auto 0 0px !important;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 	padding-top: 20px;
 	padding-left: 25px;
 	padding-right:10px;
-	background-color: rgba(255,255,255,0.7);
-	height: 550px;
+	background-color: rgba(255,255,255,0.9);
+	height: 620px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	margin: 0 5px;
@@ -53,10 +70,10 @@
 	padding: 10px;
 	width: 220px;
 	height:300px;
-	margin: 5px;
+	margin: 5px 5px 5px 15px;
 	float: left;
 	display: inline;
-	background-color: rgba(255,153,51,0.8);
+	border: 1px solid #C0C0C0;
 }
 .username{
 	font-weight: bold;
@@ -69,7 +86,7 @@
 }
 .profattributes{
 	font-weight: normal; 
-	color: white;
+	color: black;
 }
 .addtopotential{
 	width: 60px;
@@ -79,7 +96,11 @@
 	position: relative;
 	top: -45px;
 }
+.profdetails{
+	font-size: 15px;
+	color: black;
 
+}
 .profpicindex{
 	margin: 3px;
 	float: left;
@@ -90,4 +111,7 @@
 #filter{
 	border: 1px solid black;
 	height: 550px;
+}
+.potentials{
+	color: black;
 }
