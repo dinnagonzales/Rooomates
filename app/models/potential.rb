@@ -2,7 +2,8 @@ class Potential < ActiveRecord::Base
   before_save :associate_user
   belongs_to :favorable
   belongs_to :user
-  validates_presence_of :user_id, :favorable_id, :favorable_type
+  validates_presence_of :favorable_id
+  validates_uniqueness_of :favorable_id
 
 
 protected

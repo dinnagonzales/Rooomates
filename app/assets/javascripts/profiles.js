@@ -32,21 +32,11 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
   $scope.profiles= [];
   $scope.newProfile = new Profile();
   $scope.potentials=[];
-  
-   $scope.profiles.options = [
-              { id : "", name: "" }
-             ,{ id : "", name: "" }
-             ,{ id : ""  , name: "" }
-             ];
-
-
- 
+   
   Potential.query(function(potentials) {
       $scope.potentials = potentials;
    });
 
-
-  
   Profile.query(function(profiles) {
     $scope.profiles = profiles;
   });
@@ -62,9 +52,15 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
 
 
     $scope.savePotential = function (profile) {
-        newPotential = new Potential({favorable_id: profile.id})
-        newPotential.$save(function(potential) {
+        $scope.newPotential = new Potential(
+          {favorable_id: profile.id}
+          );
+        console.log($scope.newPotential);
+        $scope.newPotential.$save(function(potential) {
+          // console.log('this is the potential'   + potential);
+          
           $scope.potentials.push(potential);
+          console.log($scope.potentials)
           console.log('potentialsaved');
         });
     };
