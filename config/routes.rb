@@ -3,6 +3,7 @@ Rooomates::Application.routes.draw do
  resource :sessions
  resources :users 
  resources :profiles
+ get 'me' => 'potentials#me'
 
  
  root "static_page#home"

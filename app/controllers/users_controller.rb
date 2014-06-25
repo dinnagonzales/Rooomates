@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def me
+    respond_with current_user
+  end
+
   def create
     @user = User.new(user_params)
  

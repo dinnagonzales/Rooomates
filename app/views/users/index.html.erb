@@ -82,10 +82,13 @@
 			<br><br><br>
 			<STRONG>FILTERS</STRONG>
 
-<div class="potentials" ng-model="potentials" ng-repeat="r in potentials"> 
-			{{me.r.user_id}}: {{me.r.favorable_id}}
+<%= current_user.name %>'s Potentials!
 
-
+<div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
+			
+			{{potential.user_id}}
+			{{profile.potential.favorable_id}}
+	
 
 
 	</div>
