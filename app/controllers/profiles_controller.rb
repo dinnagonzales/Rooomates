@@ -31,9 +31,14 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
+
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
+    @profile.avatar_file_name = current_user.avatar.url
+    p @profile.avatar_file_name
+    
+
     
     if @profile.save
       respond_to do |format|
@@ -61,7 +66,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:cleanliness, :noise_tolerance, :visitors, :pets, :smoking, :sleeping_hours, :cooks, :lifestyle, :interests, :notes)
+    params.require(:profile).permit(:cleanliness, :noise_tolerance, :visitors, :pets, :smoking, :sleeping_hours, :cooks, :lifestyle, :interests, :notes, :avatar_file_name)
   end
 
 end
