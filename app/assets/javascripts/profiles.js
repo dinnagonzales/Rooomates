@@ -54,7 +54,6 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
        console.log(user);
   });
 
-
     $scope.saveProfile = function () {
       $scope.newProfile.$save(function(profile) {
         $scope.profiles.push(profile);

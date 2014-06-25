@@ -7,6 +7,8 @@
 	
 	<div class="small-6 large-2 columns" id="usersidebar">
 			<div class="userpic">PHOTO</div>
+			<%= image_tag current_user.avatar.url(:square) %>
+
 			<br><br>
 
 
@@ -38,12 +40,15 @@
 
 	
 	<div class="small-6 large-7 columns" id="profilefeed">
-	
 			
-	
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" x-ng-if="user.profile">
-				<div class="profpicindex"></div>
+				<div class="profpicindex">
+					<!-- <#%= image_tag @user.where(user_id: = 56).avatar %> -->
+
+
+				</div>
 				<span class="username">{{p.user.name}}</span>	<br>
+
 				<span class="profdetails">{{p.user.age}}</span>	<br>
 				<span class="profdetails">{{p.user.city}}, {{p.user.state}}</span>
 
@@ -68,8 +73,6 @@
 			<div class="addtopotential" ng-click="savePotential(p)">click
 			</div>
 		</div>
-
-			
 
 				<div class= "profileform" x-ng-if="!user.profile">
 					<h3>Hello, <%= current_user.name %>! Tell us about yourself.</h3>
@@ -146,7 +149,7 @@
 													<textarea name="notes" ng-model="newProfile.notes" class="form-control" required></textarea><br><br>
 
 
-													<input type="submit" value="Done!" class="linktosignup" >
+													<input type="submit" value="Done!" class="linktosignup" ng-click="reloadProfileQ()">
 
 												</form>
 
@@ -169,7 +172,9 @@
 <div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
 			{{potential.user_id}}
 			{{potential.favorable_id}}
-	
+
+			
+		
 
 
 	</div>

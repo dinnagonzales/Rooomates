@@ -20,6 +20,8 @@
 	<%= f.text_field :state, :placeholder => "State", class: "formuser"%>
 
 	</p>
+	<%= f.label :avatar %>
+  	<%= f.file_field :avatar %>
 	
 	<%= button_to('Create Account', users_path, :class => 'butt')  %>
 	<% end %>

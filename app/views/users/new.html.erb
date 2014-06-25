@@ -28,7 +28,8 @@
 	<%= f.text_field :state, :placeholder => "State" %>
 
 	</p>
-	
+	<%= f.label :avatar %>
+	<%= f.file_field :avatar %>
 	<%= button_to('Create Account', new_sessions_path, :class => 'btn btn-warning btn-mini')  %>
 	<% end %>
 </div>

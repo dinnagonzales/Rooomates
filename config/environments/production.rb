@@ -77,4 +77,14 @@ Rooomates::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['Rooomates'],
+    :access_key_id => ENV['AKIAJI5M5I7345CKREKA'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
