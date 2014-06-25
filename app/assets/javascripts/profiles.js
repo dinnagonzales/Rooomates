@@ -39,6 +39,7 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
   $scope.profiles= [];
   $scope.newProfile = new Profile();
   $scope.potentials=[];
+  
 
    
   Potential.query(function(potentials) {
@@ -58,7 +59,9 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
       $scope.newProfile.$save(function(profile) {
         $scope.profiles.push(profile);
         $scope.newProfile = new Profile();
+        
         console.log('usersaved');
+
       });
     };
 

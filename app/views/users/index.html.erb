@@ -38,11 +38,11 @@
 	</div>
 
 	
-	<div class="small-6 large-7 columns" id="profilefeed">
+	<div class="small-6 large-7 columns" id="profilefeed" >
 			
-			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" x-ng-if="user.profile">
+			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" ng-if="user.profile"> 
 				<div class="profpicindex">
-					<img ng-src="{{p.avatar_file_name}}" >
+					<img ng-src="{{p.avatar_file_name}}">
 				</div>
 				<span class="username">{{p.user.name}}</span>	<br>
 
@@ -71,10 +71,10 @@
 			</div>
 		</div>
 
-				<div class= "profileform" x-ng-if="!user.profile">
+				<div class= "profileform" ng-hide="user.profile">
 					<h3>Hello, <%= current_user.name %>! Tell us about yourself.</h3>
 					
-					<form ng-submit="saveProfile();" class="form-group">
+					<form ng-submit="saveProfile();" class="form-group" >
 
 						<label for="cleanliness" class="questions">
 							<h1 class="topic">   Cleanliness:</h1>
