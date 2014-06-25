@@ -59,7 +59,6 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
         $scope.profiles.push(profile);
         $scope.newProfile = new Profile();
         console.log('usersaved');
-        
       });
     };
 

@@ -11,7 +11,6 @@
 
 			<br><br>
 
-
 			hello, <%= current_user.name %>
 			 <br>
 			
@@ -43,9 +42,7 @@
 			
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" x-ng-if="user.profile">
 				<div class="profpicindex">
-					<!-- <#%= image_tag @user.where(user_id: = 56).avatar %> -->
-
-
+					<img ng-src="{{p.avatar_file_name}}" >
 				</div>
 				<span class="username">{{p.user.name}}</span>	<br>
 

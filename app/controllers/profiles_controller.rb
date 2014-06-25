@@ -31,9 +31,13 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
+
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
+    @profile.avatar_file_name = current_user.avatar_file_name
+    
+
     
     if @profile.save
       respond_to do |format|
