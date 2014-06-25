@@ -8,6 +8,7 @@ class PotentialsController < ApplicationController
   end
 
   def show
+    @potentials = Potential.where(:user_id => params[:id])
     respond_with @potentials
   end
 

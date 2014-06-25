@@ -51,6 +51,7 @@
 
 
 #profilefeed{
+	overflow: scroll;
 	float:left;
 	margin:10px auto 0 0px !important;
 	border-top-right-radius: 5px;
@@ -60,8 +61,6 @@
 	padding-right:10px;
 	background-color: rgba(255,255,255,0.9);
 	height: 620px;
-	overflow-y: scroll;
-	overflow-x: hidden;
 	margin: 0 5px;
 }
 
@@ -113,5 +112,33 @@
 }
 
 .profileform{
-	width: 300px;
+	width: 100%;
+	color:black;
+
+	font-weight: bold;
+	width: 100%;
+    overflow: auto;
+    height: 100%;
+
+
+}
+.questions{
+	display:inline;
+}
+
+.rating{
+	font-size:10px;
+}
+#score{
+	font-size:20px;
+	display:inline;
+	color: #6A5ACD;
+}
+.topic{
+	display: inline;
+	font-size: 25px;
+}
+#bigtextinput{
+	width: 100%;
+	height:200px;
 }

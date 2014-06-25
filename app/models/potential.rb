@@ -3,7 +3,7 @@ class Potential < ActiveRecord::Base
   belongs_to :favorable
   belongs_to :user
   validates_presence_of :favorable_id
-  validates_uniqueness_of :favorable_id
+  
 
 
 protected

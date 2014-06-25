@@ -15,10 +15,11 @@
 			
 
 			<% if current_user.profile %>
-			<a ng-click="editProfile(profile);" class="btn btn-info">edit</a>
+
+			<a ng-click="editProfile(current_user.profile);" class="btn btn-info">edit</a>
 
 
-			<%= link_to 'EDIT', edit_profile_path(current_user) %>
+			
 			<br><br>
 			Cleanliness: <%= current_user.profile.cleanliness %><br>
       		Noise Tolerance:<%= current_user.profile.noise_tolerance %><br>
@@ -80,8 +81,9 @@
 	<div class="small-6 large-2 columns" id="filtersidebar">
 			<br><br><br>
 			<STRONG>FILTERS</STRONG>
+
 <div class="potentials" ng-model="potentials" ng-repeat="r in potentials"> 
-			{{r.favorable_id}}
+			{{me.r.user_id}}: {{me.r.favorable_id}}
 
 
 

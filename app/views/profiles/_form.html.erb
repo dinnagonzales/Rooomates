@@ -1,43 +1,79 @@
 
-
-
 <div class= "profileform" x-ng-app="profile-app" x-ng-controller="ProfileCtrl">
-<h3>New Profile:</h3>
+<h3>Hello, <%= current_user.name %>! Tell us about yourself.</h3>
 
     <form ng-submit="saveProfile();" class="form-group">
 
-      <label for="cleanliness">Cleanliness:</label>
+      <label for="cleanliness" class="questions">
+         <h1 class="topic">   Cleanliness:</h1>
+
+      </label>
       <input ng-model="newProfile.cleanliness" name="cleanliness" class="form-control">
 
-      <label for="noise_tolerance">noise_tolerance:</label>
+            <h2 class="rating"><h2 id="score">5</h2> I want the house to be clean and organized all the time.</h2> 
+            <h2 class="rating"><h2 id="score">4</h2> I want the general areas of the house to be neat but your room is your business.</h2>
+            <h2 class="rating"><h2 id="score">3</h2> I want the house to be generally neat and am willing to put up with a little mess.</h2>
+            <h2 class="rating"><h2 id="score">2</h2> It does not bother me if the house is disorganized just as long as it is clean.</h2>
+            <h2 class="rating"><h2 id="score">1</h2> It does not bother me if the house is generally cluttered and disorganized.</h2><br><br>
+
+      <label for="noise_tolerance" class="questions">
+            <h1 class="topic">  Noise tolerance:</h1> 
+      </label>
       <input ng-model="newProfile.noise_tolerance" name="noise_tolerance" class="form-control">
-      
-      <label for="visitors">visitors:</label>
-      <input ng-model="newProfile.visitors" name="visitors" class="form-control">
-      
-      <label for="pets">pets:</label>
-      <input ng-model="newProfile.pets" name="pets" class="form-control">
-      
-      <label for="smoking">smoking:</label>
-      <input ng-model="newProfile.smoking" name="smoking" class="form-control">
-      
-      <label for="sleeping_hours">sleeping_hours:</label>
-      <input ng-model="newProfile.sleeping_hours" name="sleeping_hours" class="form-control">
-      
-      <label for="cooks">cooks:</label>
-      <input ng-model="newProfile.cooks" name="cooks" class="form-control">
+            <h2 class="rating"><h2 id="score">5</h2> I can't stand noise and would prefer to have it quite around the house all the time. </h2> 
+            <h2 class="rating"><h2 id="score">3</h2> I don't mind noise as long I am not sleeping/resting.</h2>
+            <h2 class="rating"><h2 id="score">2</h2> I don't mind noise from time to time.</h2>
+            <h2 class="rating"><h2 id="score">1</h2> I don't mind noise at all. </h2><br><br>
 
-      <label for="interests">interests:</label>
-      <input ng-model="newProfile.interests" name="interests" class="form-control">
+      <label for="visitors" class="questions">
+             <h1 class="topic">  Visitors:</h1></label>
+      <input ng-model="newProfile.visitors" name="visitors" class="form-control"><br>
+      How do you feel about about your roommate having visitors over?
+             <h2 class="rating"><h2 id="score">5</h2> I don't mind having visitors over everyday. </h2> 
+            <h2 class="rating"><h2 id="score">4</h2> I don't mind having visitors 3-5 times a week.</h2>
+            <h2 class="rating"><h2 id="score">3</h2> I don't mind having visitors as long as you let me know in advance.</h2>
+            <h2 class="rating"><h2 id="score">2</h2> I would prefer having visitors only on the weekends.</h2>
+            <h2 class="rating"><h2 id="score">1</h2> I don't like strangers in my home. </h2><br><br>
+      
+      <label for="sleeping_hours"  class="questions">
+            <h1 class="topic">   Sleeping Hours:</h1></label><br>
+            I sleep/prefer peace and quiet at around this time:
+      <input ng-model="newProfile.sleeping_hours" name="sleeping_hours" class="form-control"><br><br>
 
-      <label for="notes">notes:</label>
-      <input ng-model="newProfile.notes" name="notes" class="form-control">
-
-      <label for="notes">notes:</label>
-      <input ng-model="newProfile.notes" name="notes" class="form-control">
-
+<br><br>
+      <label for="cooks"  class="questions">
+             <h1 class="topic"> Cooks:</h1></label>I cook at home all the time.</h2>
+            <h2 class="rating"><h2 id="score">2</h2> I cook at home sometimes.</h2>
+            <h2 class="rating"><h2 id="score">1</h2> I do not cook at all.</h2>
+             
+             
+             
+      <input ng-model="newProfile.cooks" name="cooks" class="form-control"><br><br>
       
 
-      <input type="submit" value="Add New Profile!" class="btn btn-primary">
+      <label for="pets" class="questions">
+            <h1 class="topic">Pets:</h1></label>
+      Yes<input type="radio" ng-model="newProfile.pets" name="pets" class="form-control">
+      No<input type="radio" ng-model="newProfile.pets" name="pets" class="form-control"><br>
+      
+      <label for="smoking" class="questions"> 
+             <h1 class="topic">  Smoking:</h1></label><br>
+             It is okay to smoke inside the house? 
+      Yes<input type="radio" ng-model="newProfile.smoking" name="pets" class="form-control">
+      No<input type="radio" ng-model="newProfile.smoking" name="pets" class="form-control"><br><br>
+      
+      
+     
+      <label for="interests"  class="questions">
+             <h1 class="topic">  Interests:</h1></label>
+      <input ng-model="newProfile.interests" name="interests" class="form-control"><br><br>
+
+      <label for="notes"  class="questions">
+             <h1 class="topic">  Notes:</h1></label>
+      
+       <textarea name="notes" ng-model="newProfile.notes" class="form-control" required></textarea><br><br>
+  
+
+      <input type="submit" value="Done!" class="linktosignup">
 
     </form>

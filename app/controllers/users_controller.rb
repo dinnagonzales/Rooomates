@@ -7,10 +7,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+ 
 
     if @user.save
       flash[:success] = "You have signed up successfully."
-      redirect_to new_sessions_path
+       @current_user = @user
+       session[:user_id] = @user.id.to_s
+       redirect_to users_path
     else
       flash[:error] = @user.errors
       redirect_to root_path
@@ -18,7 +21,10 @@ class UsersController < ApplicationController
   end
 
   def index
+    p current_user
     @users = User.all
+
+    # @potentials= Potential.where(:user_id => current_user.id)
     
   end
 
