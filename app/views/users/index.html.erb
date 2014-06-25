@@ -42,7 +42,7 @@
 			
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" ng-if="user.profile"> 
 				<div class="profpicindex">
-					<img ng-src="{{p.avatar_file_name}}">
+					<img ng-src="{{p.user.avatar_url}}" />
 				</div>
 				<span class="username">{{p.user.name}}</span>	<br>
 
