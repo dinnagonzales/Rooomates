@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  respond_to :html, :json
 
   def new
     @user = User.new
@@ -25,10 +25,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    p current_user
     @users = User.all
-
-    # @potentials= Potential.where(:user_id => current_user.id)
+    respond_with current_user
     
   end
 

@@ -3,12 +3,12 @@ class PotentialsController < ApplicationController
   respond_to :json, :html
 
   def index
-    @potentials = Potential.all
+    @potentials = Potential.where(:user_id => current_user.id)
     respond_with @potentials
   end
 
   def show
-    @potentials = Potential.where(:user_id => params[:id])
+    @potentials = Potential.where(:user_id => current_user.id)
     respond_with @potentials
   end
 

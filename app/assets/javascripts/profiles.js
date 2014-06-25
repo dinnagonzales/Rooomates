@@ -27,17 +27,19 @@ profileApp.factory('Potential', ['$resource', function($resource) {
      {update: { method: 'PATCH'}});
 }]);
 
-// profileApp.factory('Me', ['$resource', function($resource) {
-//   return $resource('/me/:id', 
-//     {id: '@id'}, 
-//     {update: { method: 'PATCH'}});
-// }]);
+
+profileApp.factory('User', ['$resource', function($resource) {
+return $resource('/users/:id', 
+     {id: '@id'}, 
+     {update: { method: 'PATCH'}});
+ }]);
 
 
-profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function(Profile, Potential, $scope) {
+profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', function(Profile, Potential, User, $scope) {
   $scope.profiles= [];
   $scope.newProfile = new Profile();
   $scope.potentials=[];
+
    
   Potential.query(function(potentials) {
     $scope.potentials = potentials;
@@ -47,17 +49,18 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', '$scope', function
     $scope.profiles = profiles;
   });
 
-   // Me.get(function(me){
-   //    $scope.me = me;
-   //  });
+  User.get(function(user){
+       $scope.user = user;
+       console.log(user);
+  });
 
 
     $scope.saveProfile = function () {
       $scope.newProfile.$save(function(profile) {
         $scope.profiles.push(profile);
         $scope.newProfile = new Profile();
-        $route.reload();
         console.log('usersaved');
+        
       });
     };
 
