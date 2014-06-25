@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20140625092631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: true do |t|
-    t.string   "title"
-    t.boolean  "state",      default: true
-    t.integer  "position",   default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "conversations", force: true do |t|
     t.string   "subject",    default: ""
     t.datetime "created_at",              null: false

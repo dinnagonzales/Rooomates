@@ -6,13 +6,13 @@
 	</div>
 	
 	<div class="small-6 large-2 columns" id="usersidebar">
-			<div class="userpic">PHOTO</div>
+			Hello, <%= current_user.name %>
+			 <br><br>
 			<%= image_tag current_user.avatar.url(:square) %>
-
+			
 			<br><br>
 
-			hello, <%= current_user.name %>
-			 <br>
+		
 			
 
 			<% if current_user.profile %>
@@ -167,7 +167,8 @@
 <%= current_user.name %>'s Potentials!
 
 <div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
-			{{potential.user_id}}
+			{{potential.user.avatar_url}}
+			
 			{{potential.favorable_id}}
 
 			
