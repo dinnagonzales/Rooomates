@@ -39,6 +39,7 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
   $scope.profiles= [];
   $scope.newProfile = new Profile();
   $scope.potentials=[];
+  $scope.potentialcount= $scope.potentials.count; 
   
 
    
@@ -52,8 +53,10 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
 
   User.get(function(user){
        $scope.user = user;
-       console.log(user);
+       $scope.favorites = user.favorables;
+       console.log($scope.favorites);
   });
+
 
     $scope.saveProfile = function () {
       $scope.newProfile.$save(function(profile) {
@@ -66,14 +69,17 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
 
 
     $scope.savePotential = function (profile) {
-        $scope.newPotential = new Potential(
-          {favorable_id: profile.id}
-          );
-        console.log($scope.newPotential);
-        $scope.newPotential.$save(function(potential) {
-          $scope.potentials.push(potential);
-          console.log('potentialsaved');
-        });
+      $scope.newPotential = new Potential(
+        {favorable_id: profile.id}
+        );
+      console.log($scope.newPotential);
+      $scope.newPotential.$save(function(potential) {
+        
+
+        $scope.potentials.push(potential);
+        $scope.potentialcount++; 
+        console.log('potentialsaved');
+      });
     };
     
 

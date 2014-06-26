@@ -1,7 +1,7 @@
 <div class="userindex" x-ng-app="profile-app" x-ng-controller="ProfileCtrl" >
 	<div class="homenavigation">
 		
-
+	<div class="potcount" ng-model="potentialcount"></div>
 		<%= link_to "Sign Out", sessions_path, :method => :delete, class: "signoutlink" %>
 	</div>
 
@@ -11,45 +11,28 @@
 	
 	
 	<div class="small-6 large-2 columns" id="usersidebar">
-			 <br><div class="userpic">
-			<%= image_tag current_user.avatar.url(:square) %>
-			<br><br></div>
-			<span class="mainfont">
-			<%= current_user.name %><br/>
-			<%= current_user.age %>, <%= current_user.gender %><br>
-			<%= current_user.city %>
-
-
-			</span>
-
+		<div class="sidetitle">FILTERS:</div>
+<div class="usercat" ng-if="user.profile">
+	<div class="looking"></div>
+	<div class="lookingfor"></div>
+	</div>
+<div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
+			{{potential.user.name}}
+			{{potential.favorable_id}}
+  			
 		
-			
+			</div>
+<div class="potentials" ng-model="potentials" ng-repeat="f in favorites"> 			
+			{{f}}
+  			
+		
+			</div>
 
-			<% if current_user.profile %>
-
-			<a ng-click="editProfile(current_user.profile);" class="btn btn-info">edit</a>
-
-
-			
-			<br><br>
-			Cleanliness: <%= current_user.profile.cleanliness %><br>
-      		Noise Tolerance:<%= current_user.profile.noise_tolerance %><br>
-      		Visitors:<%= current_user.profile.visitors %><br>
-      		Pets:<%= current_user.profile.pets %><br>
-      		Smoking:<%= current_user.profile.smoking %><br>
-      		Sleeps at:<%= current_user.profile.sleeping_hours %><br>
-      		Cooks:<%= current_user.profile.cooks %><br>
-      		Lifestyle:<%= current_user.profile.lifestyle %><br>
-        	Interests:<%= current_user.profile.interests %><br>
-     		Notes:<%= current_user.profile.notes %><br>
-			<% else %>
-			<%= link_to 'Create Profile',  new_profile_path, class: "homelinks"%>
-			<% end %>
 	</div>
 
 	
 	<div class="small-6 large-7 columns" id="profilefeed" >
-			
+	
 			<div class="profiles" ng-model="profiles" ng-repeat="p in profiles" ng-if="user.profile"> 
 				<div class="profpicindex">
 					<img ng-src="{{p.user.avatar_url}}" />
@@ -77,7 +60,9 @@
 
 				<h1 class="proftitle">SMOKING:
 				<span class="profattributes">{{p.smoking}}<br>	</span></h1>
-			<div class="addtopotential" ng-click="savePotential(p)">click
+
+			<div class="addtopotential" ng-click="savePotential(p)" id="addtopotential">
+			<!-- <div class="addtopotential" ng-click="savePotential(p)" id="addedtopo"> -->
 			</div>
 		</div>
 
@@ -159,16 +144,16 @@ I sleep/prefer peace and quiet at around this time:&nbsp;
 	<h1 class="topic">Pets:</h1>
 </label><br>
 
-<input type="radio" ng-model="newProfile.pets" name="pets" value="2">
-<h2 class="rating">I cook at home sometimes.</h2><br/>
 <input type="radio" ng-model="newProfile.pets" name="pets" value="1">
-<h2 class="rating">I do not cook at all.</h2><br/>
+<h2 class="rating">Yes.</h2><br/>
+<input type="radio" ng-model="newProfile.pets" name="pets" value="0">
+<h2 class="rating">No.</h2><br/>
 
 
 
 										
 <label for="smoking" class="questions"> 
-	<h1 class="topic">  Smoking:</h1>
+	<h1 class="topic">  Smoking:</h1><br>
 </label>
 	It is okay to smoke inside the house? <br>
 	<input type="radio" ng-model="newProfile.smoking" name="smoking" value="1">
@@ -183,7 +168,7 @@ I sleep/prefer peace and quiet at around this time:&nbsp;
 <label for="interests"  class="questions">
 	<h1 class="topic">  Interests:</h1>
 </label>
-	<textarea name="notes" ng-model="newProfile.interests" class="form-control" required></textarea><br><br>
+	<textarea name="interests" ng-model="newProfile.interests" class="form-control" required></textarea><br><br>
 
 
 <label for="notes"  class="questions">
@@ -207,19 +192,19 @@ I sleep/prefer peace and quiet at around this time:&nbsp;
 
 
 	<div class="small-6 large-2 columns" id="filtersidebar">
-			<br><br><br>
-			<STRONG>FILTERS</STRONG>
+	
+			<span class="mainfont">
+			<%= current_user.name %><br>
+			<%= current_user.age %>, <%= current_user.gender %><br>
+			<%= current_user.city %>
+<div class="userpic">
+			<%= image_tag current_user.avatar.url(:square) %>
+			<br><br></div>
 
-
-<%= current_user.name %>'s Potentials!
-Potential Roomies
-
-<div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
-			{{potential.user.name}}
-			{{potential.favorable_id}}
+			<br><br>
+			Edit Profile</span>
 
 			
-		
 
 
 	</div>

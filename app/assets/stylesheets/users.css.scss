@@ -5,7 +5,7 @@
 .userindex{
 	width: 100%;	
 	height: 100%;
-	background-image: url('userindex.png');
+	background-image: url('homeindex.png');
 	background-size: cover;
 	padding-left: 60px;
 	padding-right: 40px;
@@ -13,25 +13,55 @@
 }
 
 .homenavigation{
-	border: 1px solid yellow;
+	
 	width: 100%;
-	height: 150px;
+	height: 300px;
 }
 
 #usersidebar{
 	color: black;
 	border-radius: 5px;
 	background-color: white;
-	height: 620px;
+	height: 500px;
 	margin: 10px 20px 0 20px;
 	padding: 10px;
+	text-align:center;
+}
+.sidetitle{
+color:black;
+	font-size:30px;
+	font-weight:bold;
+	margin: 510 auto !important;
 }
 
-
+.usercat{
+text-align:center;
+	
+}
+.usercat div{
+	display:inline-block;
+	
+}
+.looking{
+	border-radius: 5px;
+	border: 1px solid black;
+	background-image: url('looking.png');
+	background-size: 100%;
+	width:100%;
+	height:80px;
+}
+.lookingfor{
+	border-radius: 5px;
+	border: 1px solid black;
+	background-image: url('lookingfor.png');
+	background-size: cover;
+	width:100%;
+	height:80px;
+}
 #filtersidebar{
 	border-radius: 5px;
 	background-color: white;
-	height: 620px;
+	height: 500px;
 	
 	margin: 10px 0px 0px 0px !important;
 	padding: 10px;
@@ -60,7 +90,7 @@
 	padding-left: 25px;
 	padding-right:10px;
 	background-color: rgba(255,255,255,0.9);
-	height: 620px;
+	height: 500px;
 	margin: 0 5px;
 }
 
@@ -89,10 +119,12 @@
 .addtopotential{
 	width: 60px;
 	height: 50px;
-	border: 1px solid black;
 	float:right;
 	position: relative;
 	top: -45px;
+	background-image:url('like.png');
+	background-repeat: no-repeat;
+	background-size:contain;
 }
 .profdetails{
 	font-size: 15px;
@@ -139,4 +171,9 @@
 #bigtextinput{
 	width: 100%;
 	height:200px;
+}
+
+#addtopotential{
+	
+
 }
