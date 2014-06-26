@@ -40,7 +40,7 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
   $scope.newProfile = new Profile();
   $scope.potentials=[];
   $scope.potentialcount= $scope.potentials.count; 
-  
+  $scope.favorites=[];  
 
    
   Potential.query(function(potentials) {
@@ -54,7 +54,6 @@ profileApp.controller('ProfileCtrl', ['Profile', 'Potential', 'User', '$scope', 
   User.get(function(user){
        $scope.user = user;
        $scope.favorites = user.favorables;
-       console.log($scope.favorites);
   });
 
 

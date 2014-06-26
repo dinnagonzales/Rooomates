@@ -1,2 +1,84 @@
-<h1>Potentials#index</h1>
-<p>Find me in app/views/potentials/index.html.erb</p>
+<div class="userindex" x-ng-app="profile-app" x-ng-controller="ProfileCtrl" >
+	<div class="homenavigation">
+		
+	
+		<%= link_to "Sign Out", sessions_path, :method => :delete, class: "signoutlink" %>
+	
+
+	<div class="linksnav">
+	<div class="linksnavtext"><u><%= link_to 'HOME', users_path %></u></div>
+	<div class="linksnavtext"><u>SETTINGS</u></div>
+	<div claa="linksnavtext" id="settings"><%=link_to 'POTENTIALS', potentials_path %></div>
+	<div class="linksnavtext" id="settings"><u>MESSAGES</u></div>
+	</div>
+	</div>
+
+
+
+
+	
+	
+	<div class="small-6 large-2 columns" id="usersidebar">
+		<div class="sidetitle">FILTERS:</div>
+<div class="usercat" ng-if="user.profile">
+	<div class="looking"></div>
+	<div class="lookingfor"></div>
+	</div>
+<div class="potentials" ng-model="potentials" ng-repeat="potential in potentials"> 			
+			{{potential.user.name}}
+			{{potential.favorable_id}}
+  			
+		
+			</div>
+
+
+	</div>
+
+	
+	<div class="small-6 large-7 columns" id="profilefeed" >
+	<h1 class="mainfont">Here are your potential rooomates:</h1>
+		<div class="potentials" ng-model="potentials" ng-repeat="f in favorites"> 			
+			
+			{{f.user.name}}<br>
+  			<img ng-src="{{f.user.avatar_url}}" />
+  			{{f.cleanliness}}<br>
+  			{{f.noise_tolerance}}<br>
+  			{{f.visitors}}<br>
+  			{{f.sleeping_hours}}<br>
+  			{{f.pets}}<br>
+  			{{f.smoking}}<br>
+  			{{f.cooks}}<br>
+  			{{f.interests}}<br>
+  			{{f.notes}}<br>
+
+		
+			</div>
+			</div>
+			
+			</div>
+
+
+	<div class="small-6 large-2 columns" id="filtersidebar">
+	
+			<span class="mainfont">
+			<%= current_user.name %><br>
+			<%= current_user.age %>, <%= current_user.gender %><br>
+			<%= current_user.city %>
+<div class="userpic">
+			<%= image_tag current_user.avatar.url(:square) %>
+			<br><br></div>
+
+			<br><br>
+			Edit Profile</span>
+
+			
+
+
+	</div>
+
+	
+	
+</div>
+
+
+		

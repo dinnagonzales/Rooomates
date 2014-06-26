@@ -3,7 +3,9 @@ class PotentialsController < ApplicationController
   respond_to :json, :html
 
   def index
+    puts "why"
     @potentials = Potential.where(:user_id => current_user.id)
+    puts "hello"
     respond_with @potentials
   end
 

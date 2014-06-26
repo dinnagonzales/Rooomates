@@ -213,3 +213,21 @@ height: 3px;
 	font-size:35px;
 	color:black;
 }
+.linksnav{
+	position: absolute;
+	top:200px;
+	left:50px;	
+	width: 1350px;
+	height: 50px;
+	background-color: rgba(255,255,255,0.4);
+	color:black;
+	font-size: 30px;
+}
+
+.linksnav div{
+	display: inline-block;
+	margin:10px;
+}
+#settings{
+	float:right;
+}
