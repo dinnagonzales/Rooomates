@@ -11,9 +11,11 @@ class User < ActiveRecord::Base
         :state, 
         :password_digest
         
+  # has_one :profile
+  # has_many :potentials
   has_one :profile
-  has_many :potentials
-
+  has_many :favorable_links, class_name: "Potential", foreign_key: :user_id, inverse_of: :user
+  has_many :favorables, through: :favorable_links, class_name: "Profile", foreign_key: :favorable_id
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: {
     thumb: '100x100>',

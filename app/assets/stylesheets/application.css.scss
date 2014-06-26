@@ -21,7 +21,7 @@ body {
 	color: white !important;
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
 	
 }
 
@@ -177,4 +177,28 @@ height: 3px;
 .staticpage {
 	width: 100%;
 	
+}
+
+
+.questions{
+	display:inline;
+	
+}
+
+.rating{
+	display:inline;
+	font-size:18px;
+}
+#score{
+	font-size:20px;
+	display:inline;
+	color: #6A5ACD;
+}
+.topic{
+	display: inline;
+	font-size: 25px;
+}
+#bigtextinput{
+	width: 100%;
+	height:200px;
 }
