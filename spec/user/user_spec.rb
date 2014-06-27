@@ -46,6 +46,8 @@ describe User do
         expect(@otheruser).to_not be_persisted
     end
 
+  
+
 
 end
 
