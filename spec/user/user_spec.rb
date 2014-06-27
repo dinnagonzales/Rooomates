@@ -2,59 +2,53 @@ require 'spec_helper'
 
 describe User do
 
-	it {should respond_to(:feed)}
-	it {should respond_to(:relationships)}
-	it {should respond_to(:followed_users)}
-
-	it {should respond_to(:following?)}
-	it {should respond_to(:follow!)}
-	it {should respond_to(:unfollow!)}
-
-	
-	
-
-	describe "following" do
-		before do
-  			@user = FactoryGirl.create(:user, name:"sam")
-  			@other_user = FactoryGirl.create(:user, name: "dinna")
-  			@user.follow!(@other_user)
-
-  		end
-
-		# let!(:other_user) { FactoryGirl.create(:user)}
-
-		# 	before do 
-		# 		@user.save!
-		# 		@user.follow!(other_user)
-		# 	end		
+	before do
+    	@user = User.create!(name: "Jose Rizal", 
+    						email: "jose@rizal.com", 
+    						password: "makata", 
+    						age: 35,
+    						gender: "male",
+    						city: "LA",
+    						state: "CA")
+  	end
 
 
-	it { should be_following(@other_user)}
-	its(:followed_users) {should include(@other_user)}	
-	
-
-	describe "followed user" do
-		subject { @other_user }
-		its(:followers) {should include(@user)}
+	it "should require a name" do
+  	User.new(:name => "").should_not be_valid
 	end
 
 
-	describe 'and unfollowing' do 
-		before {@user.unfollow!(@other_user)}
-
-		it {should_not be_following(@other_user)}
-		its(:followed_users) {should_not include(@other_user)}
-		end 
-	
-
-	describe "followed_users" do 
-		subject { other_user }
-		its(:followers) { should include(@user)}
+	it "should require age" do
+  	User.new(:age => "").should_not be_valid
 	end
 
-
-
+	it "should require gender" do
+  	User.new(:gender => "").should_not be_valid
 	end
+
+	it "should require a city" do
+  	User.new(:city => "").should_not be_valid
+	end
+
+	it "should require a state" do
+  	User.new(:state => "").should_not be_valid
+	end
+
+    it "should have a unique email" do
+        @otheruser = User.new(email: "jose@rizal.com")
+        @otheruser.save
+        expect(@otheruser).to be_invalid
+    end
+
+    it "should have a real email" do
+        @otheruser = User.new(name: "Andres Bonifacio", email: "andresbonifacio.com")
+        @otheruser.save
+        expect(@otheruser).to_not be_persisted
+    end
+
+
 end
+
 	
 	
+

@@ -223,6 +223,10 @@ height: 3px;
 	color:black;
 	font-size: 30px;
 }
+.potentialroomies{
+	width: 90%;
+	height: auto;
+}
 
 .linksnav div{
 	display: inline-block;
@@ -230,4 +234,11 @@ height: 3px;
 }
 #settings{
 	float:right;
+}
+.potentials{
+	border: 1px solid black;
+	margin: 10px;
+	background-image:url('profiles.png');
+	background-size:cover;
+	background-repeat: no-repeat;
 }

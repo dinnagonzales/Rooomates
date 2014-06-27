@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
         :age,
         :gender,
         :city,
-        :state, 
-        :password_digest
+        :state 
+  validates_uniqueness_of :email
         
   # has_one :profile
   # has_many :potentials
